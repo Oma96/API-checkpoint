@@ -13,7 +13,7 @@ function MovieList({ movies, rate }) {
     useEffect(
         () =>
           axios
-            .get("https://movie-app-gmc.herokuapp.com/api/movies")
+            .get("https://jsonplaceholder.typicode.com/users")
             .then((res) => setNewmovies(res.data))
              .then((res) => setSpinner(true))
             .catch((err) => console.log(err)),
@@ -22,12 +22,12 @@ function MovieList({ movies, rate }) {
 
     return (
         <div>
-            <Filter style={{ marginTop: 50 }} input={input} setInput={setInput} />
+            {/* <Filter style={{ marginTop: 50 }} input={input} setInput={setInput} /> */}
             <div className='movies'>
 
                 {spineer?
                 (newmovies
-                    .filter(el => el.title.toUpperCase().includes(input.toUpperCase()) && el.rate >= rate)
+                    // .filter(el => el.title.toUpperCase().includes(input.toUpperCase()) && el.rate >= rate)
                     .map((el, key) => <MovieCard className='card' movie={el} key={el.id} />)):
                     (<Spinner animation="border" variant="warning" />)}
             </div>

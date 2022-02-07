@@ -11,14 +11,19 @@ function MovieCard({ movie }) {
 
 
       <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={movie.image} />
+       
         <Card.Body>
-          <Card.Title>{movie.title}</Card.Title>
+          <Card.Title>{movie.name}</Card.Title>
 
         </Card.Body>
         <ListGroup className="list-group-flush">
-          <ListGroupItem>{movie.rate}</ListGroupItem>
-          <Link to={`/details/${movie.id}`}><Button >More details</Button> </Link>
+          <ListGroupItem>{movie.username}</ListGroupItem>
+          <ListGroupItem>{movie.email}</ListGroupItem>
+          <ListGroupItem>{movie.address.suite}</ListGroupItem>
+          <ListGroupItem>{movie.address.city}</ListGroupItem>
+          <ListGroupItem>{movie.address.zipcode}</ListGroupItem>
+          <ListGroupItem>{movie.address.geo.lat}</ListGroupItem>
+          <ListGroupItem>{movie.address.geo.lng}</ListGroupItem>
         </ListGroup>
 
       </Card>

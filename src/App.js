@@ -42,10 +42,10 @@ function App() {
   return (
     <Router >
         <div className="App">
-         <h1 >Movies Land</h1>
+         
      
         <Routes>
-         <Route path="/" element={<><Rate rate={rate} setRate={setRate}/> <MovieList movies={movies} rate={rate}/> <AddMovie movies={movies} setMovies={setMovies}/></>}/>
+         <Route path="/" element={<> <MovieList movies={movies} rate={rate}/> </>}/>
          <Route path ="/details/:id" element={<MovieDetails movies={movies} />}/>
        </Routes>
 
